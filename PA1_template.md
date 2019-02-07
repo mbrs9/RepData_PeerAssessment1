@@ -5,8 +5,6 @@ output:
     keep_md: true
 ---
 
----
-
 ## Loading and preprocessing the data
 Load the libraries needed:
 
