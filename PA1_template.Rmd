@@ -95,9 +95,9 @@ avgSteps[which.max(avgSteps$steps), 1]
 
 
 ## Imputing missing values
-Note that there are a number of days/intervals where there are missing values (coded as \color{red}{\verb|NA|}NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
+Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
-### 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with \color{red}{\verb|NA|}NAs)
+### 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 
 ```{r}
 sum(is.na(activity$steps))
@@ -150,7 +150,7 @@ median(DailySummaryFill$Total.Steps)
 *Yes, clearly, filling in missing values affect the total mean and median values, increasing from 9354.23 to 10766.19 for the mean and from 10395 to 10766.19 for the median* 
 
 
-###What is the impact of imputing missing data on the estimates of the total daily number of steps?
+### What is the impact of imputing missing data on the estimates of the total daily number of steps?
 ```{r plotscomp, fig.align="center", fig.width = 10}
 par(mfrow = c(1,2), mar = c(4,4,5,1), oma = c(2,1,1,1))
 hist(
@@ -174,7 +174,7 @@ mtext("Taken each day (filling NA´s)")
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-For this part the \color{red}{\verb|weekdays()|}weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
+For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
 
 ### 1. Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 ```{r}
@@ -191,7 +191,7 @@ head(activityFill, 4)
 ```
 
 
-### 2. Make a panel plot containing a time series plot (i.e. \color{red}{\verb|type = "l"|}type="l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
+### 2. Make a panel plot containing a time series plot (i.e. type="l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
 Create a new Data Set containing the average number of steps taken, averaged across all weekday days or weekend days, for each of the 5-minute intervals:
 ```{r}

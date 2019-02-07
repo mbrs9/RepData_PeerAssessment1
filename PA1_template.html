@@ -369,8 +369,8 @@ mtext(&quot;Taken each day (filling NA´s)&quot;)</code></pre>
 ## 3 0.1320755 2012-10-01       10  weekday
 ## 4 0.1509434 2012-10-01       15  weekday</code></pre>
 </div>
-<div id="make-a-panel-plot-containing-a-time-series-plot-i.e.-typel-of-the-5-minute-interval-x-axis-and-the-average-number-of-steps-taken-averaged-across-all-weekday-days-or-weekend-days-y-axis.-see-the-readme-file-in-the-github-repository-to-see-an-example-of-what-this-plot-should-look-like-using-simulated-data." class="section level3">
-<h3>2. Make a panel plot containing a time series plot (i.e. type=“l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.</h3>
+<div id="make-a-panel-plot-containing-a-time-series-plot-i.e.typel-of-the-5-minute-interval-x-axis-and-the-average-number-of-steps-taken-averaged-across-all-weekday-days-or-weekend-days-y-axis.-see-the-readme-file-in-the-github-repository-to-see-an-example-of-what-this-plot-should-look-like-using-simulated-data." class="section level3">
+<h3>2. Make a panel plot containing a time series plot (i.e. type=“l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.</h3>
 <p>Create a new Data Set containing the average number of steps taken, averaged across all weekday days or weekend days, for each of the 5-minute intervals:</p>
 <pre class="r"><code>avgStepsFill &lt;-
         aggregate(steps ~ interval + day.type, data = activityFill, FUN = mean)</code></pre>
