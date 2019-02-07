@@ -78,10 +78,10 @@ DailySummary <-
 
 
 ```r
-hist(DailySummary$Total.Steps, main = "Total number of steps taken each day", xlab = "Steps", breaks = 10, ylim = c(0,25) )
+hist(DailySummary$Total.Steps, main = "Total number of steps taken each day", xlab = "Steps", breaks = 10, ylim = c(0,25), col = "lightsteelblue" )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](PA1_template_files/figure-html/hist1-1.png)<!-- -->
 
 ### 3. Calculate and report the mean and median of the total number of steps taken per day:
 The mean:
@@ -125,7 +125,7 @@ plot(
 )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](PA1_template_files/figure-html/timeseries-1.png)<!-- -->
 
 ### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 The interval with the maximum number of steps:
@@ -204,11 +204,12 @@ hist(
         main = "Total number of steps taken each day",
         xlab = "Steps",
         sub = "With filled missing values",
-        ylim = c(0,25)
+        ylim = c(0,25),
+        col = "hotpink"
 )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](PA1_template_files/figure-html/histfill-1.png)<!-- -->
 
 
 The mean total number of steps taken per day.
@@ -242,7 +243,8 @@ hist(
         main = "Total number of steps", 
         xlab = "Steps", 
         breaks = 10, 
-        ylim = c(0,25) )
+        ylim = c(0,25),
+        col = "lightsteelblue")
 mtext("Taken each day")
 hist(
         DailySummaryFill$Total.Steps,
@@ -250,7 +252,8 @@ hist(
         main = "Total number of steps",
         xlab = "Steps",
         ylim = c(0,25),
-        xlim = c(0,24000)
+        xlim = c(0,24000),
+        col = "hotpink"
 )
 mtext("Taken each day (filling NA´s)")
 ```
@@ -303,5 +306,5 @@ g <-
 g + geom_line() + facet_grid(day.type ~ .)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](PA1_template_files/figure-html/panelplot-1.png)<!-- -->
 

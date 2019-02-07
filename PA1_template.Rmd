@@ -52,8 +52,8 @@ DailySummary <-
 
 ### 2. If you do not understand the difference between a histogram and a barplot, research the difference between them. Make a histogram of the total number of steps taken each day.
 
-```{r}
-hist(DailySummary$Total.Steps, main = "Total number of steps taken each day", xlab = "Steps", breaks = 10, ylim = c(0,25) )
+```{r hist1}
+hist(DailySummary$Total.Steps, main = "Total number of steps taken each day", xlab = "Steps", breaks = 10, ylim = c(0,25), col = "lightsteelblue" )
 ```
 
 ### 3. Calculate and report the mean and median of the total number of steps taken per day:
@@ -75,7 +75,7 @@ Calculate average steps by interval:
 avgSteps <- aggregate(steps ~ interval, data = activity, FUN = mean)
 ```
 Make the time series plot:
-```{r}
+```{r timeseries}
 plot(
         x = avgSteps$interval,
         y = avgSteps$steps,
@@ -124,7 +124,7 @@ head(activityFill, 4)
 
 
 ### 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. 
-```{r}
+```{r histfill}
 DailySummaryFill <-
         activityFill %>% group_by(date) %>% summarise(Total.Steps = sum(steps))
 hist(
@@ -133,7 +133,8 @@ hist(
         main = "Total number of steps taken each day",
         xlab = "Steps",
         sub = "With filled missing values",
-        ylim = c(0,25)
+        ylim = c(0,25),
+        col = "hotpink"
 )
 ```
 
@@ -158,7 +159,8 @@ hist(
         main = "Total number of steps", 
         xlab = "Steps", 
         breaks = 10, 
-        ylim = c(0,25) )
+        ylim = c(0,25),
+        col = "lightsteelblue")
 mtext("Taken each day")
 hist(
         DailySummaryFill$Total.Steps,
@@ -166,7 +168,8 @@ hist(
         main = "Total number of steps",
         xlab = "Steps",
         ylim = c(0,25),
-        xlim = c(0,24000)
+        xlim = c(0,24000),
+        col = "hotpink"
 )
 mtext("Taken each day (filling NA´s)")
 ```
@@ -199,7 +202,7 @@ avgStepsFill <-
         aggregate(steps ~ interval + day.type, data = activityFill, FUN = mean)
 ```
 Make panel plot:
-```{r}
+```{r panelplot}
 g <-
         ggplot(avgStepsFill, aes(x = interval, y = steps, col = day.type))
 g + geom_line() + facet_grid(day.type ~ .)
